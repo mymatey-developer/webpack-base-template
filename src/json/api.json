@@ -1,0 +1,16 @@
+{
+  "results": [
+    {
+      "information1": "Example",
+      "information2": "Example",
+      "information3": "Example",
+      "information4": 1,
+      "information5": [
+        "Example",
+        "Example",
+        "Example"
+      ],
+      "information6": 2
+    }
+  ]
+}

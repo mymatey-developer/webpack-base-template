@@ -1,0 +1,9 @@
+
+<nav>
+	{% for link in site.data.footer %}
+		<a href="{{ link.url }}" alt="{{ link.title }}">{{ link.title }}</a>
+   	{% endfor %}
+</nav>
+<div id="copyright">
+    Copyright © 2017 by {{page.author}}
+</div>

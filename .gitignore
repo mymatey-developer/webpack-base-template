@@ -1,0 +1,8 @@
+# Exclude files:
+node_modules
+.sass-cache
+bower_components
+.idea
+*.DS_Store
+_site
+Gemfile.lock

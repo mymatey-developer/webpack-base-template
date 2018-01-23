@@ -1,0 +1,28 @@
+---
+title: base-template
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+email: salat.christian@googlemail.com
+description: 'This is a description'
+baseurl: 
+url: 
+twitter_username: 
+github_username: NestorOps
+markdown: kramdown
+theme: minima
+plugins:
+- jekyll-feed
+exclude:
+- .idea
+- src
+- node_modules
+- package.json
+- webpack.config.js
+- ".gitignore"
+- README.md
