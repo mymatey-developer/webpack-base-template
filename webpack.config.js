@@ -1,18 +1,17 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
-console.log("DIRNAME =>" + __dirname);
-console.log(path.resolve(__dirname, '/assets/js/react'));
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     watch: true,
     entry: {
-        'js/react/app.js': __dirname + '/src/react/app.js',
-        'css/style.css': __dirname + '/src/sass/style.scss'
+        app:__dirname + '/src/react/app.js',
+        script: __dirname + '/src/script.js',
+        styles: __dirname + '/src/sass/style.scss'
     },
     output: {
-        path: __dirname + '/assets',
-        filename: '[name]',
+        path: __dirname + '/assets/js',
+        filename: '[name].js',
     },
     module: {
         loaders: [
@@ -33,9 +32,14 @@ module.exports = {
         }]
     },
     plugins: [
-        new ExtractTextPlugin({ // define where to save the file
-            filename: __dirname + '/assets/css/[name].css',
+        new ExtractTextPlugin('../css/[name].css', {
             allChunks: true,
         }),
+        new CopyWebpackPlugin([
+            {from: __dirname + '/src/img',to:'../img'}
+        ]),
+        new CopyWebpackPlugin([
+            {from: __dirname + '/src/json',to:'../json'}
+        ])
     ]
 };
